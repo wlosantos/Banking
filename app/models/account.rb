@@ -5,6 +5,7 @@ class Account < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   belongs_to :bank
+  has_many :orders
 
   enum status: %i[ ativo inativo ]
 
