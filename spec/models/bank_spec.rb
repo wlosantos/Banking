@@ -13,6 +13,10 @@ RSpec.describe Bank, type: :model do
     it { should define_enum_for(:status).with_values(%i[ ativo inativo ])}
   end
 
+  describe 'check all associations for bank' do
+    it { is_expected.to have_many :accounts }
+  end
+
   describe 'valid factory banks' do
     it 'has a valid FactoryBot bank' do
       expect(build(:bank)).to be_valid

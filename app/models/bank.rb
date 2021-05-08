@@ -4,6 +4,8 @@ class Bank < ApplicationRecord
   validates :name, presence: true
   validates :cod_bank, presence: true
 
+  has_many :accounts
+
   def full_bank_name
     "#{cod_bank}-#{name}"
   end
