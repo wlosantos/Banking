@@ -8,6 +8,7 @@ RSpec.describe Order, type: :model do
     it { is_expected.to respond_to :fee }
     it { is_expected.to respond_to :status }
     it { is_expected.to respond_to :account_id }
+    it { is_expected.to respond_to :favored_id }
   end
 
   describe 'check all associations for order' do
@@ -20,7 +21,7 @@ RSpec.describe Order, type: :model do
   end
 
   it 'has a valid factory Order' do
-    expect(build(:order)).to be_valid
+    expect(create(:order)).to be_valid
   end
 
 end
