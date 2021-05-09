@@ -5,6 +5,7 @@ class Account < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   belongs_to :bank
+  has_many :orders
 
   enum status: %i[ ativo inativo ]
 
@@ -13,6 +14,10 @@ class Account < ApplicationRecord
   validates_presence_of :agency
 
   before_validation :generate_bank_account
+
+  def balance
+    self.value
+  end
 
   protected
   # Gerenado uma conta bancária para o usuário

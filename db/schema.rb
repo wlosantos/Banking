@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_08_215004) do
+ActiveRecord::Schema.define(version: 2021_05_08_232455) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,5 +43,20 @@ ActiveRecord::Schema.define(version: 2021_05_08_215004) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.integer "type_order", null: false
+    t.decimal "value", precision: 10, scale: 2, default: "0.0"
+    t.decimal "fee", precision: 5, scale: 2, default: "0.0"
+    t.integer "status", default: 0, null: false
+    t.bigint "account_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "favored_id"
+    t.index ["account_id"], name: "index_orders_on_account_id"
+    t.index ["favored_id"], name: "index_orders_on_favored_id"
+  end
+
   add_foreign_key "accounts", "banks"
+  add_foreign_key "orders", "accounts"
+  add_foreign_key "orders", "accounts", column: "favored_id"
 end
