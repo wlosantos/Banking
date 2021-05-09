@@ -12,7 +12,11 @@ RSpec.describe "Welcomes", type: :request do
       expect(response).to be_successful
     end
 
-    it 'return content' do
+    it 'returns status code 200' do
+      expect(response.status).to eql(200)
+    end
+
+    it 'return the content' do
       expect(response.body).to include('nobe-Bank')
     end
   end

@@ -1,0 +1,12 @@
+= form_with(model: @order, local: true) do |form|
+  = form.hidden_field :type_order, value: tipo
+  .field
+  = form.label 'Valor', class: 'label'
+  .columns
+    .column
+      .field
+        .control
+          = form.number_field :value, class: 'input', step: :any
+    .column
+      .field
+        = form.submit 'Enviar', class: 'button is-info'

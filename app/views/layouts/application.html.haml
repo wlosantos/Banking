@@ -14,7 +14,7 @@
   %body{:data => {:flash => {:messages => "#{JSON.dump(flash.to_a)}"}}}
     = render 'shared/menubar'
 
-    -# .container.mt-2
+    .container.mt-2
       #wrapper_conteudo
         #menu_wrapper
           = render 'shared/sidebar'
@@ -26,7 +26,7 @@
             .dados_bancarios
               .banco
                 %small Banco:
-                %b #{ current_account.bank_fullname }
+                %b #{ current_account.bank.full_bank_name }
               .agency
                 %small Agência:
                 %b #{ current_account.agency }

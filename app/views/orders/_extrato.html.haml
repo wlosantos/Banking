@@ -1,0 +1,23 @@
+%table.table.is-fullwidth
+  %thead
+    %tr
+      %th{ width: '16%' } Data
+      %th{ width: '24%' } Transação
+      %th{ width: '42%'} Favorecido(a) / Origem
+      %th{ width: '8%'} Taxa
+      %th{width: '10%'} Valor
+  %tbody
+    - if @estratos != nil
+      - @estratos.each do |order|
+        %tr{ style: ("background-color: #fdefec" unless !order.saida_amount?(current_account)) }
+          %td #{ order.created_at.strftime("%d/%m/%Y") }
+          %td #{ order.type_order }
+          %td
+            - unless order.favored_id.blank?
+              #{ order.favored_name(current_account) }
+          %td
+            - if order.fee > 0
+              = '- '
+              #{ number_to_currency order.fee }
+          %td
+            #{ number_to_currency order.quality_amount(current_account) }
