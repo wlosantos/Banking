@@ -1,0 +1,109 @@
+@import 'variable';
+
+html { background-color: $color-background-base; }
+body {
+  height: 100vh;
+  background-color: $color-background-base;
+}
+
+#wrapper_conteudo {
+  display: flex;
+
+  #menu_wrapper{
+    width: 220px;
+    background-color: #fff;
+    border-radius: 10px;
+    min-height: 600px;
+    padding: 10px 10px;
+    margin-right: 10px;
+  }
+
+  #conteudo_wrapper{
+    flex: 1;
+    background-color: #eee;
+    border-radius: 10px;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+
+    #cabecalho {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #ccc;
+
+      .titular {
+        font-size: 1.6em;
+      }
+    }
+
+    #transacoes {
+      flex: 1;
+      padding: 10px;
+      position: relative;
+    }
+
+    #footer_account {
+      border-top: 1px solid #ccc;
+      padding-top: 8px;
+      text-align: right;
+      .saldo {
+        font-size: 1.2em;
+        font-weight: 800;
+      }
+    }
+  }
+}
+
+.sidebar_menu {
+  margin-top: 1em;
+
+  .link_menu {
+    display: block;
+    background-color: $color-link-dark;
+    padding: 8px 8px;
+    border-radius: 5px;
+    color: #fff;
+    margin-bottom: 4px;
+
+    &:hover {
+      background-color: $color-link-clean;
+    }
+
+    .link_icon {
+      margin-right: 2px;
+    }
+  }
+}
+
+.display_content {
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.conteudo_central {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 1em 2em;
+}
+
+#extrato_table {
+  .table tbody tr.negativo{
+    background-color: #f60;
+  }
+}
+
+.form_extrato_periodo {
+  width: 300px;
+  .column {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    small {
+      margin-right: 10px;
+      font-weight: 500;
+    }
+  }
+}

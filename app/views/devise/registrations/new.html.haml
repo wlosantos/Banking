@@ -1,0 +1,30 @@
+.devise_form
+  %h2 Novo Cadastro
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    %small.has-text-grey
+      = render "devise/shared/error_messages", resource: resource
+    .field
+      = f.label :name, class: 'label'
+      .control
+        = f.text_field :name, class: 'input', autofocus: true
+    .field
+      = f.label :document, class: 'label'
+      .control
+        = f.text_field :document, class: 'input'
+    .field
+      = f.label :email, class: 'label'
+      .control
+        = f.email_field :email, class: 'input', autocomplete: "email"
+    .field
+      = f.label :password, class: 'label'
+      .control
+        = f.password_field :password, class: 'input', autocomplete: "new-password"
+    .field
+      = f.label :password_confirmation, class: 'label'
+      .control
+        = f.password_field :password_confirmation, class: 'input', autocomplete: "new-password"
+    .field
+      .control
+        = f.submit "Cadastrar", class: 'button is-info'
+  %div.has-text-centered.mt-3
+    -# = render "devise/shared/links"

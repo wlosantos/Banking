@@ -2,7 +2,7 @@
 !!! 5
 %html
   %head
-    %title W3n Templates
+    %title bank-nobe
     = csrf_meta_tags
     = csp_meta_tag
     = favicon_link_tag asset_path('favicon.png')
@@ -11,5 +11,29 @@
     = stylesheet_pack_tag 'application'
     = javascript_pack_tag 'application'
 
-  %body
-    = yield
+  %body{:data => {:flash => {:messages => "#{JSON.dump(flash.to_a)}"}}}
+    = render 'shared/menubar'
+
+    .container.mt-2
+      #wrapper_conteudo
+        #menu_wrapper
+          = render 'shared/sidebar'
+
+        #conteudo_wrapper
+          #cabecalho
+            .titular
+              %h2 #{ current_account.name }
+            .dados_bancarios
+              .banco
+                %small Banco:
+                %b #{ current_account.bank_fullname }
+              .agency
+                %small Agência:
+                %b #{ current_account.agency }
+              .account
+                %small Conta:
+                %b #{ current_account.num_account }
+          = yield
+          #footer_account.pr-5
+            %small Saldo
+            %span.saldo #{ number_to_currency current_account.value }
