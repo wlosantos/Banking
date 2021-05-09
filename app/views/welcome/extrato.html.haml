@@ -1,0 +1,21 @@
+#transacoes
+  %h2.title.is-6
+    Extrato
+  .form_extrato_periodo.mt-0.mb-4
+    = form_with(url: extrato_path, local: true, method: :get) do |f|
+      .columns
+        .column
+          %small Início
+          .field
+            .control
+              = f.date_field :date_start
+        .column
+          %small final
+          .field
+            .control
+              = f.date_field :date_end
+        .column
+          .field
+            = f.submit 'Consultar', class: 'button is-small is-dark'
+  #extrato_table
+    = render 'orders/extrato_periodo', conta: current_account

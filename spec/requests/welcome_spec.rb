@@ -8,14 +8,13 @@ RSpec.describe "Welcomes", type: :request do
       get root_path
     end
 
-    it 'returns http success' do
-      expect(response.status).to eq(200)
+    it 'renders a successful response' do
+      expect(response).to be_successful
     end
 
     it 'return content' do
       expect(response.body).to include('nobe-Bank')
     end
-
   end
 
 end
