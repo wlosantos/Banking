@@ -1,0 +1,18 @@
+%nav.navbar.has-background-white
+  .container
+    .navbar-brand
+      = link_to root_path, class: 'navbar-item' do
+        %h2.subtitle nobe-Bank
+    .navbar-menu
+      .navbar-end
+        - if account_signed_in?
+          .navbar-item
+            = link_to destroy_account_session_path, method: :delete, data: { confirm: 'Centerza que deseja sair?' }, class: 'button is-danger' do
+              Sair
+        -else
+          .navbar-item
+            = link_to new_account_session_path, class: 'button is-info' do
+              Entrar
+          .navbar-item
+            = link_to new_account_registration_path, class: 'button is-warning' do
+              Cadastrar-se

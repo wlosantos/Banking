@@ -22,10 +22,10 @@ class Account < ApplicationRecord
   protected
   # Gerenado uma conta bancária para o usuário
   def generate_bank_account
-    if self.bank_id.nil?
+    if self.bank_id.nil? || self.bank_id.blank?
       begin
         banco = Bank.all.sample
-        self.bank_id = 1 unless banco
+        self.bank_id = banco.id != nil ? banco.id : 1
         self.agency = rand(100..999).to_s
         self.num_account = rand(1000..9999)
       end while Account.exists?(agency) && Account.exists?(num_account)
