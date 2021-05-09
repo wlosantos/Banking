@@ -8,12 +8,12 @@
           %small Início
           .field
             .control
-              = f.date_field :date_start
+              = f.date_field :date_start, value: @inicio.to_date
         .column
           %small final
           .field
             .control
-              = f.date_field :date_end
+              = f.date_field :date_end, value: (@fim - 1).to_date
         .column
           .field
             = f.submit 'Consultar', class: 'button is-small is-dark'

@@ -6,7 +6,7 @@
     .column
       .field
         .control
-          = form.number_field :value, class: 'input', step: :any
+          = form.number_field :value, class: 'input', step: :any, maxlength: 7, wrapper: false
     .column
       .field
         = form.submit 'Enviar', class: 'button is-info'
