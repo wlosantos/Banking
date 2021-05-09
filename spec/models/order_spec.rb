@@ -24,4 +24,9 @@ RSpec.describe Order, type: :model do
     expect(create(:order)).to be_valid
   end
 
+  describe 'generate bank statement for 10 days' do
+    let(:account) { create(:account) }
+    it { expect(Order.all.bank_statement(account)).to match_array([]) }
+  end
+
 end

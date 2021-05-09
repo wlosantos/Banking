@@ -29,4 +29,11 @@ end
     end
   end
 
+  describe '#balance' do
+    let(:account) { create(:account, value: 50.0) }
+    it 'check balance' do
+      expect(account.balance).to eq(account.value)
+    end
+  end
+
 end

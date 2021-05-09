@@ -15,6 +15,10 @@ class Account < ApplicationRecord
 
   before_validation :generate_bank_account
 
+  def balance
+    self.value
+  end
+
   protected
   # Gerenado uma conta bancária para o usuário
   def generate_bank_account
