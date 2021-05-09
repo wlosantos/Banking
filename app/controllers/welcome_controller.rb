@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
 
   def index
-    @extratos = Order.bank_statement(current_account.id)
+    @extratos = Order.bank_statement(current_account)
   end
 
   def deposito

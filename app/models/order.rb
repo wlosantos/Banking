@@ -15,6 +15,30 @@ class Order < ApplicationRecord
 
   after_create :balance_transation
 
+  def quality_amount(conta)
+    if self.type_order != 'deposito' && self.account.id == conta.id
+      "- #{self.value}"
+    else
+      "#{self.value}"
+    end
+  end
+
+  def favored_name(conta)
+  if conta.id != self.favored_id
+    Account.find_by_id(self.favored_id).name
+  else
+    account.name
+  end
+end
+
+  def saida_amount?(conta)
+    self.type_order != 'deposito' && self.account.id == conta.id
+  end
+
+  def setting_fee
+    ted_amount - self.value
+  end
+
   def saque_permited?
     account.balance >= self.value
   end

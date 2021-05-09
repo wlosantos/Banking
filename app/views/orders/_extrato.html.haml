@@ -7,8 +7,8 @@
       %th{ width: '8%'} Taxa
       %th{width: '10%'} Valor
   %tbody
-    - if @estratos != nil
-      - @estratos.each do |order|
+    - if extrato(current_account) != nil
+      - extrato(current_account).each do |order|
         %tr{ style: ("background-color: #fdefec" unless !order.saida_amount?(current_account)) }
           %td #{ order.created_at.strftime("%d/%m/%Y") }
           %td #{ order.type_order }
