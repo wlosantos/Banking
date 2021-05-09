@@ -1,0 +1,36 @@
+%sidebar
+  .sidebar_menu
+    = link_to root_path, class: 'link_menu' do
+      .link_content
+        %span.link_icon
+          %i.fas.fa-home
+        %span.link_text
+          Home
+
+    = link_to deposito_path, class: 'link_menu' do
+      .link_content
+        %span.link_icon
+          %i.fas.fa-home
+        %span.link_text
+          Depósito
+
+    - if current_account.value > 0
+      = link_to saque_path, class: 'link_menu' do
+        .link_content
+          %span.link_icon
+            %i.fas.fa-home
+          %span.link_text
+          Saque
+      = link_to transferencia_path, class: 'link_menu' do
+        .link_content
+          %span.link_icon
+            %i.fas.fa-home
+          %span.link_text
+            Transferência
+
+      = link_to extrato_path, class: 'link_menu' do
+        .link_content
+          %span.link_icon
+            %i.fas.fa-home
+          %span.link_text
+            Extrato

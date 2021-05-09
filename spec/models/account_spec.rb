@@ -14,14 +14,8 @@ RSpec.describe Account, type: :model do
   end
 
   describe 'check all validates fields' do
-    it { is_expected.to validate_presence_of :name  }
-    it { is_expected.to validate_presence_of :document }
     it { should define_enum_for(:status).with_values(%i[ ativo inativo ])}
   end
-
-  describe 'check all associations for account' do
-  it { is_expected.to belong_to :bank }
-end
 
   describe 'valid factory account and #generate_bank_account' do
     it 'has a valid FactoryBot account' do
