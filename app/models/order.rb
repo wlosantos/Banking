@@ -70,7 +70,7 @@ end
   def ted_amount
     amount = '5.0'.to_d
     amount = '7.0'.to_d if set_fee?
-    amount += '10.0'.to_d unless ted_limit_without_fee?
+    amount += '10.0'.to_d if ted_limit_without_fee?
     amount += self.value
   end
 
@@ -87,7 +87,7 @@ end
   end
 
   def ted_limit_without_fee?
-    self.value <= '1000.0'.to_d
+    self.value > '999.9'.to_d
   end
 
 end
