@@ -24,6 +24,7 @@ group :development, :test do
   gem 'sqlite3', '~> 1.4'
   gem 'factory_bot_rails', '~> 6.1'
   gem 'faker'
+  gem 'capybara', '~> 3.35', '>= 3.35.3'
   gem 'awesome_print'
 end
 

@@ -7,6 +7,8 @@
       .field
         .control
           = form.number_field :value, class: 'input', step: :any, maxlength: 7, wrapper: false
+          %span
+            %small ex: 500.00 / 1000.00
     .column
       .field
         = form.submit 'Enviar', class: 'button is-info'
