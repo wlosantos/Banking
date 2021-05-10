@@ -39,6 +39,11 @@ end
     ted_amount - self.value
   end
 
+  def balance_ted?
+    account.balance >= ted_amount
+  end
+
+
   def saque_permited?
     account.balance >= self.value
   end
