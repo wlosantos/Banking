@@ -1,24 +1,7 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Bank
+Este é um projeto de com as regras de negócios simplificadas de uma transação bancárias (depositar, sacar, transferir) toda feita em RoR.
+Este projeto é um resultado de um teste solicitado por uma empresa. Apesar de um layout muito simples os recursos usados foram pensados na
+aplicação de conhecimentos adquiridos no estudo de Ruby on Rails. Uma das solicitações apresentada pela empresa foi a aplicação de testes com Rspec.
+<br />
+<hr />
+<img src="#" />
