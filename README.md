@@ -5,6 +5,7 @@ aplicação de conhecimentos adquiridos no estudo de Ruby on Rails. Uma das soli
 <br />
 <hr />
 <p>
-  <a href='https://bank-nobe.herokuapp.com/' target='_blank'></a>
+  Link:
+  <a href='https://bank-nobe.herokuapp.com/' target='_blank'>Bank Nobe</a>
 </p>
 <img src="https://github.com/wlosantos/Banking/blob/master/app/assets/images/bank.png" alt='W3n Bank' />
